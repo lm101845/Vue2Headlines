@@ -1,0 +1,5 @@
+注意：
+1.我的项目名字叫headlines-m，不是老师的toutiao-m
+2.我用的CSS预处理器是stylus，不是老师选的less
+3.我用的是yarn,不是npm
+4.vue文件中的html我使用的pug(哈巴狗)模版引擎，而不是原生的html来写的。
