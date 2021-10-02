@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-09-19 13:54:11
- * @LastEditTime: 2021-09-20 11:49:16
- * @FilePath: \headlines-m\src\main.js
+ * @LastEditTime: 2021-10-02 22:07:53
+ * @FilePath: \Vue2Headlines\02-代码手敲\headlines-m\src\main.js
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -16,6 +16,9 @@ import './styles/index.stylus'
 import Vant from 'vant';
 // 加载Vant组件库样式
 import 'vant/lib/index.css';
+
+// 引入amfe-flexible移动端适配——自动设置rem基准值(html标签字体大小)
+import 'amfe-flexible';
 // 全局注册Vant中的组件
 Vue.use(Vant);
 

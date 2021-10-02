@@ -1,8 +1,8 @@
 <!--
  * @Author: liming
  * @Date: 2021-09-19 13:54:11
- * @LastEditTime: 2021-09-20 12:02:42
- * @FilePath: \headlines-m\src\App.vue
+ * @LastEditTime: 2021-10-02 22:44:49
+ * @FilePath: \Vue2Headlines\02-代码手敲\headlines-m\src\App.vue
 -->
 <template lang="pug">
 #app
@@ -17,6 +17,7 @@
     <van-cell-group inset/>
         <van-cell title="单元格" value="内容" />
         <van-cell title="单元格" value="内容" label="描述信息" />
+    .box
 </template>
 
 <script>
@@ -24,4 +25,9 @@
     name: "App",
   };
 </script>
-<style lang="stylus"></style>
+<style lang="stylus">
+    .box
+        width 200px
+        height 100px
+        background-color pink
+</style>

@@ -10,5 +10,5 @@ GitHub 仓库：https://github.com/lipengzhou/topline-m
 项目笔记：www.yuque.com/lipengzhou/toutiao-publish-vue
 
 观看进度：
-前台移动端看到第 节
+前台移动端看到第13节
 后台管理系统看到第 节
