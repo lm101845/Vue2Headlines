@@ -7,8 +7,9 @@ GitHub 仓库：https://github.com/lipengzhou/topline-m
 接口文档：http://toutiao.m.lipengzhou.com/api.html
 在线预览：http://toutiao.m.lipengzhou.com/
 
-项目笔记：www.yuque.com/lipengzhou/toutiao-publish-vue
+后端项目笔记：www.yuque.com/lipengzhou/toutiao-publish-vue
+后端项目预览：http://be-toutiao-web.itheima.net/#/article
 
 观看进度：
-前台移动端看到第13节
-后台管理系统看到第 节
+前台移动端看到第20节
+后台管理系统看到第节

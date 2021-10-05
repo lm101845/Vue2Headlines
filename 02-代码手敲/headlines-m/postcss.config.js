@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-10-02 22:32:04
- * @LastEditTime: 2021-10-02 22:46:28
- * @FilePath: \Vue2Headlines\02-代码手敲\headlines-m\postcss.config.js
+ * @LastEditTime: 2021-10-03 15:52:08
+ * @FilePath: \headlines-m\postcss.config.js
  */
 
 // 这个文件名字是死的，不能随便起。
@@ -11,19 +11,45 @@
  * PostCSS的配置文件
  * 如果有配置失败的，把rem版本降为5.1.1即可
  * 注意：行内样式postcss是不会转的
+ * PostCSS是基于Node.js运行的一个处理CSS的工具
+ * 所以它的配置文件也是运行在Node.js中
  */
 
 module.exports = {
+    //plugins用来配置要使用的相关插件
     plugins: {
-        autoprefixer: {
-            browsers: ['Android >= 4.0', 'IOS' >= 8]
-        },
+        //自动添加浏览器厂商声明前缀，用来兼容不同的浏览器
+        // 注意：VueCLI已经在内部默认配置了autoprefixer，你在这里又配置了一遍反而多此一举
+        // autoprefixer代码不在这里写了，在.browserslistrc里面写
+        // autoprefixer: {
+        //     //browsers用来配置要兼容的系统(浏览器)环境
+        //     //这个配置没有问题，但是写到这里控制台会有编译警告
+        //     //为什么？因为VueCLI是通过项目中的.browserslistrc来配置要兼容的环境信息的
+        //     browsers: ['Android >= 4.0', 'IOS' >= 8]
+        // },
         // postcss-pxtorem 插件的版本需要 >= 5.0.0
         'postcss-pxtorem': {
-            rootValue({ file }) {
-                return file.indexOf('vant') !== -1 ? 37.5 : 75;
-            },
+            //转换的根元素基准值
+            //正常情况下按照你的设计稿来
+            //如果你是750宽的设计稿，那就写750/10=75——我们的设计稿是750的(750指的是物理像素)
+            //如果你是375宽的设计稿，那就写375/10=37.5
+            // 注意：Vant组件库是基于设备独立像素——逻辑像素375写的
+            // 移动端页面一般都是以iphone6,7,8为原型设计的
+            //设计稿都是基于物理像素750宽设计的。
+            // 所以如果设置成75，那么我们就可以量多少就写多少，但是Vant的样式就会变得很小(小了一半)
+            // 所以我们还必须设置成37.5,但是在测量我们的设计稿的时候我们必须让你的测量单位/2
+            // 它是基于375来转的，而你是基于750来测量的
+            // rootValue: 75,
+            //有没有更好的方法？不用计算？？
+            //有！！PS中选择图像——>图像大小——>宽高改为原来一半(先将重新采样给关掉，单位改为【点】)
+            // 在iphone6,7,8设备下，一个点等于2个像素
+            // 我们PS中是375点*667点，但是它的物理像素确是750px * 1334px
+            //IOS开发他们用的单位就是点 
+            rootValue: 37.5,
+            //需要转换的CSS属性，*就是所有属性都要转换
+            // propList: ['font-size'],    //这个表明只转换字体
             propList: ['*'],
+        // },
         },
     },
 };

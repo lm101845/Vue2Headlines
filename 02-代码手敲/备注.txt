@@ -1,11 +1,12 @@
 注意：
-1.我的项目名字叫headlines-m，不是老师的toutiao-m
-2.我用的CSS预处理器是stylus，不是老师选的less
+1.我的前端项目名字叫headlines-m，不是老师的toutiao-m
+2.我用的CSS预处理器是stylus，不是老师选的less——后来我又改成less了。。。。。。
 3.我用的是yarn,不是npm
 4.vue文件中的html我使用的pug(哈巴狗)模版引擎，而不是原生的html来写的。
+5.我的后端项目名字叫headlines-b(b指的是后台back的意思)，不是老师的toutiao-public-admin
 
 接口有关：第一个是老师正在维护的，第二第三个网上找的
 http://ttapi.research.itcast.cn/
-http://toutiao-app.itheima.net
+http://toutiao-app.itheima.net    --- 可以
 http://m-toutiao-web.itheima.net
 

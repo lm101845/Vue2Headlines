@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "axios": "^0.22.0",
     "core-js": "^3.17.3",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
     "pug": "^3.0.2",
     "pug-html-loader": "^1.1.5",
     "pug-plain-loader": "^1.1.0",

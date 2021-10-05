@@ -1,5 +1,0 @@
-// 在stylus中，我们可以不再写花括号,分号,冒号
-
-// 全局样式
-body 
-    // background-color pink
