@@ -13,15 +13,14 @@ import './styles/index.less'
 
 // 建议为了前期开发的便利性我们选择方式三：导入所有组件，在最后做打包优化的时候根据需求配置按需加载以降低打包体积大小。
 // 加载Vant组件库
-import Vant from 'vant';
+import Vant from 'vant'
 // 加载Vant组件库样式
-import 'vant/lib/index.css';
+import 'vant/lib/index.css'
 
 // 引入amfe-flexible移动端适配——自动设置rem基准值(html标签字体大小)
-import 'amfe-flexible';
+import 'amfe-flexible'
 // 全局注册Vant中的组件
-Vue.use(Vant);
-
+Vue.use(Vant)
 
 // 关闭生产环境提示
 Vue.config.productionTip = false

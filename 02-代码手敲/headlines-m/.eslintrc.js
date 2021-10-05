@@ -10,7 +10,7 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/essential'
     // '@vue/standard'
     //  暂时先把这个给注释掉，不然老是报错很烦
   ],

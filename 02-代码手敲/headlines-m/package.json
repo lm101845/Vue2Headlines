@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+     "test": "standard && node my-tests.js"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -37,6 +38,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
     "postcss-pxtorem": "^5.1.1",
+    "standard": "^16.0.4",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.11"

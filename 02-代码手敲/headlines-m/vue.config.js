@@ -5,12 +5,12 @@
  * @FilePath: \headlines-m\vue.config.js
  */
 module.exports = {
-    chainWebpack: config => {
-        config.module.rule('pug')
-            .test(/\.pug$/)
-            .use('pug-html-loader')
-            .loader('pug-html-loader')
-            .end()
-    },
-   
+  chainWebpack: config => {
+    config.module.rule('pug')
+      .test(/\.pug$/)
+      .use('pug-html-loader')
+      .loader('pug-html-loader')
+      .end()
+  }
+
 }
