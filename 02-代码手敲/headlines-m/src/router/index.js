@@ -1,7 +1,7 @@
 /*
  * @Author: liming
  * @Date: 2021-09-19 13:54:11
- * @LastEditTime: 2021-10-03 20:46:43
+ * @LastEditTime: 2021-11-06 17:58:20
  * @FilePath: \headlines-m\src\router\index.js
  */
 import Vue from 'vue'
