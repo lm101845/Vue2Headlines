@@ -23,7 +23,8 @@
     <van-form
       :show-error="false"
       :show-error-message="false"
-      :validate-first = "true"
+      :validate-first="true"
+      ref="login-form"
       @submit="onLogin"
       @failed="onFailed"
     >
@@ -34,7 +35,7 @@
         icon-prefix="toutiao"
         left-icon="shouji"
         placeholder="请输入手机号"
-        name="手机号"
+        name="mobile"
         :rules="formRules.mobile"
       />
       <van-field
@@ -43,11 +44,15 @@
         icon-prefix="toutiao"
         left-icon="yanzhengma"
         placeholder="请输入验证码"
-        name="验证码"
+        name="code"
         :rules="formRules.code"
       >
         <template #button>
-          <van-button size="small" round class="send-btn"
+          <van-button
+            size="small"
+            round
+            class="send-btn"
+            @click.prevent="onSendSms"
             >获取验证码</van-button
           >
         </template>
@@ -118,18 +123,39 @@ export default {
         this.$toast.fail("登陆失败，手机号或验证码错误");
       }
     },
-    onFailed(error){
-        console.log('验证失败',error);
-        if(error.errors[0]){
-            // this.$toast(error.errors[0].message)  
-            // 这个是简写
-            this.$toast({
-                message:error.errors[0].message,
-                position: 'top'
-                //防止手机键盘太高看不见提示消息
-            })
-        }
-    }
+    onFailed(error) {
+      console.log("验证失败", error);
+      if (error.errors[0]) {
+        // this.$toast(error.errors[0].message)
+        // 这个是简写
+        this.$toast({
+          message: error.errors[0].message,
+          position: "top",
+          //防止手机键盘太高看不见提示消息
+        });
+      }
+    },
+    async onSendSms() {
+      try {
+        //校验手机号码(有无输入，格式对不对)
+        // console.log("1111");
+        await this.$refs["login-form"].validate("mobile");
+        //我们不需要它验证通过的结果，只要验证失败的结果
+      } catch (err) {
+        console.log("[ 验证失败 ] >", err);
+        this.$toast({
+          message: err.message,
+          position: "top",
+          //防止手机键盘太高看不见提示消息
+        });
+      }
+      // this.$refs["login-form"].validate("mobile").then((data) => {
+      //   console.log(data);
+      // });
+      //验证通过-->发送验证码(显示倒计时)-->用户接收短信-->输入验证码-->请求登陆
+      //倒计时开始，隐藏发送按钮，显示倒计时
+      //倒计时结束，则隐藏倒计时，显示发送按钮
+    },
   },
 };
 </script>
