@@ -8,17 +8,20 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// 加载全局样式
-import './styles/index.less'
 
 // 建议为了前期开发的便利性我们选择方式三：导入所有组件，在最后做打包优化的时候根据需求配置按需加载以降低打包体积大小。
 // 加载Vant组件库
 import Vant from 'vant'
+
 // 加载Vant组件库样式
 import 'vant/lib/index.css'
 
 // 引入amfe-flexible移动端适配——自动设置rem基准值(html标签字体大小)
 import 'amfe-flexible'
+
+// 加载全局样式(后面的vant样式会覆盖掉这个，所以我们把它放到vant样式后面)
+import './styles/index.less'
+
 // 全局注册Vant中的组件
 Vue.use(Vant)
 
