@@ -11,7 +11,10 @@
 import axios from 'axios'
 const request = axios.create({
   // 把这个实例给它单独的接收一下，因为以后我们要配置请求拦截器，响应拦截器等
-  baseURL: 'http://toutiao-app.itheima.net/' // 基础路径——防止我们后面发请求时，每次url都写一大坨
+  // 基础路径——防止我们后面发请求时，每次url都写一大坨
+    // baseURL: 'http://toutiao-app.itheima.net/'
+    baseURL: 'http://api-toutiao-web.itheima.net',  //这个地址现在有效(22-02-16)
+
 })
 
 // 请求拦截器

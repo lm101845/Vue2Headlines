@@ -28,17 +28,20 @@
         placeholder="请输入验证码"
       >
         <template #button>
-          <van-button size="small" round class="send-btn">获取验证码</van-button>
+          <van-button size="small" round class="send-btn"
+            >获取验证码</van-button
+          >
         </template>
       </van-field>
     </van-cell-group>
     <div class="login-btn-wrap">
-      <van-button type="info" block>登陆</van-button>
+      <van-button type="info" block @click="onLogin">登陆</van-button>
     </div>
   </div>
 </template>
 
 <script>
+import {login} from "@/api/user";
 export default {
   name: "LoginIndex",
   components: {},
@@ -50,6 +53,21 @@ export default {
         code: "", //验证码
       },
     };
+  },
+  methods: {
+    async onLogin() {
+      //1.找到数据接口
+      //2.封装请求方法
+      //3.请求调用登陆
+      try {
+        const res = await login(this.user);
+        //4.处理响应结果
+        console.log(res);
+      } catch (err) {
+          console.log(err);
+          console.log('登陆失败');
+      }
+    },
   },
 };
 </script>
